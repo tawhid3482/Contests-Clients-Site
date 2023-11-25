@@ -1,0 +1,18 @@
+[
+    {
+        "_id":"1",
+        "name": "Sample Contest 1",
+        "shortDescription": "Contest 1 Short Description",
+        "contestPrize": "Cash Prize, Gift Vouchers",
+        "winnerName": "John Doe",
+         "winnerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU"
+      },
+      {
+        "_id":"2",
+        "name": "Sample Contest 2",
+        "shortDescription": "Contest 2 Short Description",
+        "contestPrize": "Tech Gadgets, Exclusive Merchandise",
+        "winnerName": "Sajid Doe",
+         "winnerImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU"
+      }
+]
