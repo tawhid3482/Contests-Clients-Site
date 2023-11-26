@@ -17,7 +17,7 @@ const ContestDetailsShow = ({ contestDetail }) => {
   return (
     <div>
       <Helmet>
-        <title>Saikat | Details</title>
+        <title>LOREMIPSUM | Details</title>
       </Helmet>
       <div className="card w-full  lg:card-side bg-base-100 shadow-xl dark:bg-slate-700 dark:text-slate-100">
         <figure className="w-full md:w-2/3">

@@ -9,7 +9,7 @@ const MainLayOut = () => {
   return (
     <div className="container mx-auto">
       <Helmet>
-        <title>Saikat | Home</title>
+        <title>LOREMIPSUM | Home</title>
       </Helmet>
     {isloginPage || <Navbar></Navbar>}
       <Outlet></Outlet>

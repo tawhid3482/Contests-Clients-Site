@@ -1,77 +1,80 @@
-
- [
-      {
-        "_id":"1",
-        "name": "Sample Contest 1",
-        "img": "sample_image_1.jpg",
-        "count": 1000,
-        "contestDescription": "This is a sample contest description for Contest 1.",
-        "shortDescription": "Contest 1 Short Description",
-        "contestPrize": "Cash Prize, Gift Vouchers",
-        "winnerName": "John Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2023-12-31"
-      },
-      {
-        "_id":"2",
-        "name": "Sample Contest 2",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
-        "count": 500,
-        "contestDescription": "This is a sample contest description for Contest 2.",
-        "shortDescription": "Contest 2 Short Description",
-        "contestPrize": "Tech Gadgets, Exclusive Merchandise",
-        "winnerName": "Sajid Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2024-02-15"
-      },
-      {
-        "_id":"3",
-        "name": "Sample Contest 3",
-        "img": "sample_image_3.jpg",
-        "count": 1200,
-        "contestDescription": "This is a sample contest description for Contest 3.",
-        "shortDescription": "Contest 3 Short Description",
-        "contestPrize": "Travel Voucher, Hotel Stay",
-        "winnerName": "saikat Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2023-11-15"
-      },
-      {
-        "_id":"4",
-        "name": "Sample Contest 3",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
-        "count": 1200,
-        "contestDescription": "This is a sample contest description for Contest 3.",
-        "shortDescription": "Contest 3 Short Description",
-        "contestPrize": "Travel Voucher, Hotel Stay",
-        "winnerName": "saikat Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2023-11-15"
-      },
-      {
-        "_id":"5",
-        "name": "Sample Contest 3",
-        "img": "sample_image_3.jpg",
-        "count": 1200,
-        "contestDescription": "This is a sample contest description for Contest 3.",
-        "shortDescription": "Contest 3 Short Description",
-        "contestPrize": "Travel Voucher, Hotel Stay",
-        "winnerName": "saikat Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2023-11-15"
-      },
-      {
-        "_id":"6",
-        "name": "Sample Contest 3",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
-        "count": 1200,
-        "contestDescription": "This is a sample contest description for Contest 3.",
-        "shortDescription": "Contest 3 Short Description",
-        "contestPrize": "Travel Voucher, Hotel Stay",
-        "winnerName": "saikat Doe",
-         "winnerImage": "winner_image_1.jpg",
-        "deadline": "2023-11-15"
-      }
-    ]
- 
-  
+[
+  {
+    "_id": "1",
+    "name": "Sample Contest 1",
+    "img": "sample_image_1.jpg",
+    "count": 1000,
+    "contestDescription": "This is a sample contest description for Contest 1.",
+    "shortDescription": "Contest 1 Short Description",
+    "contestPrize": "Cash Prize, Gift Vouchers",
+    "winnerName": "John Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2023-12-31"
+  },
+  {
+    "_id": "2",
+    "name": "Sample Contest 2",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
+    "count": 500,
+    "contestDescription": "This is a sample contest description for Contest 2.",
+    "shortDescription": "Contest 2 Short Description",
+    "contestPrize": "Tech Gadgets, Exclusive Merchandise",
+    "winnerName": "Sajid Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2024-02-15"
+  },
+  {
+    "_id": "3",
+    "name": "Sample Contest 3",
+    "img": "sample_image_3.jpg",
+    "count": 1200,
+    "contestDescription": "This is a sample contest description for Contest 3.",
+    "shortDescription": "Contest 3 Short Description",
+    "contestPrize": "Travel Voucher, Hotel Stay",
+    "winnerName": "saikat Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2023-11-15"
+  },
+  {
+    "_id": "4",
+    "name": "Sample Contest 3",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
+    "count": 1200,
+    "contestDescription": "This is a sample contest description for Contest 3.",
+    "shortDescription": "Contest 3 Short Description",
+    "contestPrize": "Travel Voucher, Hotel Stay",
+    "winnerName": "saikat Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2023-11-15"
+  },
+  {
+    "_id": "5",
+    "name": "Sample Contest 3",
+    "img": "sample_image_3.jpg",
+    "count": 1200,
+    "contestDescription": "This is a sample contest description for Contest 3.",
+    "shortDescription": "Contest 3 Short Description",
+    "contestPrize": "Travel Voucher, Hotel Stay",
+    "winnerName": "saikat Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2023-11-15"
+  },
+  {
+    "_id": "6",
+    "name": "Sample Contest 3",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdKiOJEGZcZMIiNlJy5ZtcwBD3o7WuHJbBM0GGWpXMXEyqXLy-5V8YVHfa6Qv5XYWeoM&usqp=CAU",
+    "count": 1200,
+    "contestDescription": "This is a sample contest description for Contest 3.",
+    "shortDescription": "Contest 3 Short Description",
+    "contestPrize": "Travel Voucher, Hotel Stay",
+    "winnerName": "saikat Doe",
+    "winnerImage": "winner_image_1.jpg",
+    "fee":"1.25",
+    "deadline": "2023-11-15"
+  }
+]

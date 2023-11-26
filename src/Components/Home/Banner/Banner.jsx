@@ -6,7 +6,7 @@ const Banner = () => {
    console.log(item);
 
 useEffect(()=>{
-   fetch('fake.json')
+   fetch('http://localhost:5000/contests')
       .then((res) => res.json())
       .then((data) => setcontests(data));
 },[])

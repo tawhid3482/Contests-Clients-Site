@@ -6,12 +6,14 @@ import { BsSun } from "react-icons/bs";
 import { GiNightSleep } from "react-icons/gi";
 import UseAuth from "../../Hooks/UseAuth";
 import logo from "../../assets/logo/bird-colorful-logo-gradient-vector_343694-1365.avif";
+import { FcRegisteredTrademark } from "react-icons/fc";
+import UseRegister from "../../Hooks/UseRegister";
 
 const Navbar = () => {
   const { user, logOut } = UseAuth(null);
   const [isMenuVisible, setMenuVisible] = useState(false);
   const [theme, setTheme] = useState(null);
-
+  const [resUser] = UseRegister();
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -31,27 +33,49 @@ const Navbar = () => {
   const links = (
     <>
       <li className="ml-4">
-        <Link to="/" className="flex justify-center  hover:bg-white bg-purple-100">
-          Home 
+        <Link
+          to="/"
+          className="flex justify-center  hover:bg-white bg-purple-100"
+        >
+          Home
         </Link>
       </li>
 
       <li className="ml-4">
-        <Link to="/contest" className="flex justify-center  hover:bg-white bg-purple-100">
-          Contests 
+        <Link
+          to="/contest"
+          className="flex justify-center  hover:bg-white bg-purple-100"
+        >
+          Contests
+        </Link>
+      </li>
+
+      <li className="ml-4">
+        <Link
+          to="/dashboard/resContests"
+          className="flex justify-center  hover:bg-white bg-purple-100"
+        >
+          <FcRegisteredTrademark className="text-xl " />
+          <div className="badge badge-secondary">+{resUser?.length}</div>
         </Link>
       </li>
       <li className="ml-4">
-        <Link to="/winner" className="flex justify-center  hover:bg-white bg-purple-100">
-          Contest Winner 
+        <Link
+          to="/winner"
+          className="flex justify-center  hover:bg-white bg-purple-100"
+        >
+          Contest Winner
         </Link>
       </li>
       <li className="ml-4">
-        <Link to="/best" className="flex justify-center  hover:bg-white bg-purple-100">
-         Best Contests  
+        <Link
+          to="/best"
+          className="flex justify-center  hover:bg-white bg-purple-100"
+        >
+          Best Contests
         </Link>
       </li>
-  
+
       {/* Add more links as needed */}
     </>
   );
@@ -76,7 +100,7 @@ const Navbar = () => {
                   <button className="btn btn-sm">{user.displayName}</button>
                 </li>
                 <li className="">
-                  <Link to={'/dashboard'}  className="btn btn-sm">
+                  <Link to={"/dashboard"} className="btn btn-sm">
                     Dashboard
                   </Link>
                 </li>

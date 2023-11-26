@@ -8,14 +8,14 @@ import {
 import { useEffect, useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
-  const { LoginGoogle, loginByEmail } = UseAuth();
+  const {  loginByEmail } = UseAuth();
   
   const [disable, setdisable] = useState(true);
 
@@ -32,13 +32,7 @@ const Login = () => {
     loginByEmail(email, password).then((Result) => {
       const user = Result.user;
       console.log(user);
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Your successfully login",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      toast.success('Your are login successfully')
       navigate(from, { replace: true });
     });
   };
@@ -56,7 +50,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>Saikat | Login</title>
+        <title>LOREMIPSUM | LOGIN</title>
       </Helmet>
 
       <div className="hero min-h-screen bg-base-200">

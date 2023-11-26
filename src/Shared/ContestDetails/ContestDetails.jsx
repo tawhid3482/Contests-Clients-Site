@@ -11,16 +11,15 @@ const ContestDetails = () => {
 
   useEffect(() => {
     if (data) {
-      const findContests = data?.find((contest) => contest?._id === _id);
+      const findContests = data?.find((contest) => contest?._id ===_id);
       setContestDetails(findContests);
-      console.log(findContests);
     }
-  }, [_id, data]);
+  }, [data,_id]);
 
   return (
     <div>
       <Helmet>
-        <title>Saikat | Contests Details</title>
+        <title>LOREMIPSUM | Contests Details</title>
       </Helmet>
       <div className="">
         {contestDetail ? (

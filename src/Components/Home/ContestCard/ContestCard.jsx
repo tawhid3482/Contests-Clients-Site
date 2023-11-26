@@ -9,8 +9,8 @@ const ContestCard = ({ item, filterCards }) => {
       <div className="my-10 ">
         <div className="flex flex-wrap justify-center  items-center md:grid gap-5 md:grid-cols-2 lg:grid-cols-3 w-full mx-auto">
           {limitContests2?.length > 0 ? (
-            limitContests2.map((contest) => (
-              <ContestCards key={contest.id} contest={contest} />
+            limitContests2?.map((contest) => (
+              <ContestCards key={contest._id} contest={contest} />
             ))
           ) : (
             <div></div>
@@ -20,7 +20,7 @@ const ContestCard = ({ item, filterCards }) => {
           <div className={`mt-10 ${limitContests2 ? "hidden" : ""}`}>
             <div className="flex flex-wrap justify-center items-center md:grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {limitContests?.map((contest) => (
-                <ContestCards key={contest.id} contest={contest} />
+                <ContestCards key={contest._id} contest={contest} />
               ))}
             </div>
           </div>

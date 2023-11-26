@@ -7,9 +7,12 @@ import SingUp from "../Pages/SingUp/SingUp";
 import ContestDetails from "../Shared/ContestDetails/ContestDetails";
 import PrivateRoute from "./PrivateRoute";
 import Contest from "../Pages/Contest/Contest";
-import Register from "../Pages/Register/Register";
 import Winner from "../Pages/Winner/Winner";
 import Best from "../Pages/Best/Best";
+import Registration from "../Pages/Register/Registration";
+import Dashboard from "../Components/MainlayOut/Dashboard";
+import ResContest from "../Pages/Dashboard/ResContest/ResContest";
+import MyContest from "../Pages/Dashboard/MyContest";
 
 const Routes = createBrowserRouter([
     {
@@ -36,12 +39,12 @@ const Routes = createBrowserRouter([
             {
                 path:'contestDetails/:_id',
                 element:<PrivateRoute><ContestDetails></ContestDetails></PrivateRoute>,
-                loader:()=>fetch('fake.json')
+                loader:()=>fetch('http://localhost:5000/contests')
             },
             {
                 path:"registration/:_id",
-                element:<Register></Register>,
-                loader:()=>fetch('fake.json')
+                element:<Registration></Registration>,
+                loader:()=>fetch('http://localhost:5000/contests')
             },
             {
                 path:'winner',
@@ -56,7 +59,19 @@ const Routes = createBrowserRouter([
         ]
     },
     {
-        
+       path:'dashboard' ,
+       element:<Dashboard></Dashboard>,
+       errorElement:<ErrorPage></ErrorPage>,
+       children:[
+        {
+            path:'resContests',
+            element:<ResContest></ResContest>
+        },
+        {
+            path:'mycontests',
+            element:<MyContest></MyContest>
+        }
+       ]
     }
 ])
         

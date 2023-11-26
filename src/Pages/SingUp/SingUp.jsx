@@ -3,10 +3,10 @@ import sign from "../../assets/login/360_F_517139142_ftw0Y7hSAL0f7fgmA9x2g2ff72p
 import UseAuth from "../../Hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const SingUp = () => {
-  const { LoginGoogle, CreateUser, UpdateProfile } = UseAuth();
+  const {  CreateUser, UpdateProfile } = UseAuth();
   const navigate = useNavigate();
   
   const location = useLocation();
@@ -26,22 +26,12 @@ const SingUp = () => {
       console.log(loggedUser);
       UpdateProfile(data.name, data.photo)
         .then(() => {
-          // const userInfo={
-          //     name:data.name,
-          //     photo:data.photo
-          // }
           reset();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your Account Create Successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          toast.success('Your account created successfully')
           navigate(from, { replace: true });
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+         toast.error('Something wrong please try again')
         });
     });
   };
@@ -49,7 +39,7 @@ const SingUp = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Saikat | Sign Up</title>
+        <title>LOREMIPSUM | SIGN UP</title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
