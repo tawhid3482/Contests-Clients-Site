@@ -4,11 +4,14 @@ import UseAuth from "../../Hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const SingUp = () => {
-  const {  CreateUser, UpdateProfile } = UseAuth();
+  const axiosPublic = UseAxiosPublic();
+  const { CreateUser, UpdateProfile } = UseAuth();
   const navigate = useNavigate();
-  
+
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
@@ -24,14 +27,27 @@ const SingUp = () => {
     CreateUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+
       UpdateProfile(data.name, data.photo)
         .then(() => {
-          reset();
-          toast.success('Your account created successfully')
-          navigate(from, { replace: true });
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+            photo: data.photo,
+          };
+
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log("user save database");
+              reset();
+              toast.success("Your account created successfully");
+              navigate(from, { replace: true });
+            }
+          });
         })
+
         .catch(() => {
-         toast.error('Something wrong please try again')
+          toast.error("Something wrong please try again");
         });
     });
   };
@@ -141,11 +157,14 @@ const SingUp = () => {
             </form>
             <div className="text-center ">
               <p>
-                New here?
-                <Link className="text-pink-500" to="/login">
-                  Sign in
+                New here? 
+                <Link className="text-pink-500 ml-2" to="/login">
+                   Sign in
                 </Link>
               </p>
+            </div>
+            <div className="text-center p-4 ">
+              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>

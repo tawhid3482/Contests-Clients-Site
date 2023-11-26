@@ -1,7 +1,6 @@
 import ContestCards from "./ContestCards";
 
 const ContestCard = ({ item, filterCards }) => {
-  console.log(item, filterCards);
   const limitContests = item?.slice(0,5)
   const limitContests2 = filterCards?.slice(0,5)
   return (

@@ -3,7 +3,6 @@ import ContestCard from "../ContestCard/ContestCard";
 
 const Banner = () => {
   const [item,setcontests]=useState()
-   console.log(item);
 
 useEffect(()=>{
    fetch('http://localhost:5000/contests')

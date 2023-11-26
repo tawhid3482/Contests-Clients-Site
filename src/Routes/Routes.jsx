@@ -13,6 +13,8 @@ import Registration from "../Pages/Register/Registration";
 import Dashboard from "../Components/MainlayOut/Dashboard";
 import ResContest from "../Pages/Dashboard/ResContest/ResContest";
 import MyContest from "../Pages/Dashboard/MyContest";
+import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 const Routes = createBrowserRouter([
     {
@@ -60,7 +62,7 @@ const Routes = createBrowserRouter([
     },
     {
        path:'dashboard' ,
-       element:<Dashboard></Dashboard>,
+       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
        errorElement:<ErrorPage></ErrorPage>,
        children:[
         {
@@ -70,6 +72,15 @@ const Routes = createBrowserRouter([
         {
             path:'mycontests',
             element:<MyContest></MyContest>
+        },
+        {
+            path:'myprofile',
+            element:<MyProfile></MyProfile>
+        },
+        // admin routes
+        {
+            path:'users',
+            element:<AllUsers></AllUsers>
         }
        ]
     }

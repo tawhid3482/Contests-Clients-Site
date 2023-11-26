@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -121,15 +122,16 @@ const Login = () => {
                 </Link>
               </p>
             </div>
+            <div className="text-center p-4">
+            <SocialLogin></SocialLogin>
+          </div>
           </div>
 
           <div className="text-center mt-5 flex flex-col justify-center items-center lg:text-left">
             <h1 className="text-3xl md:text-5xl font-bold">Login now!</h1>
             <img src={login} className="w-full md:w-[500px]" alt="" />
           </div>
-          {/* <div className="text-center p-4">
-            <SocialLogin></SocialLogin>
-          </div> */}
+         
         </div>
       </div>
     </div>
