@@ -37,6 +37,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const UpdateProfile = (name, photo) => {
+    
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,

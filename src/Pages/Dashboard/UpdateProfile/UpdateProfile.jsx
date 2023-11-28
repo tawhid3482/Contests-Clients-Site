@@ -5,7 +5,7 @@ import UseAuth from "../../../Hooks/UseAuth";
 
 const UpdateProfile = () => {
   const navigate = useNavigate();
-  const { updateProfile } = UseAuth();
+  const { UpdateProfile } = UseAuth();
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const UpdateProfile = () => {
     const name = form.name.value;
     const photo = form.photo.value;
     console.log(name, photo);
-    updateProfile(name,photo)
+    UpdateProfile(name,photo)
       .then((Result) => {
         const user = Result
         console.log(user);
