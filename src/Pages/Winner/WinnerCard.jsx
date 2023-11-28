@@ -7,7 +7,7 @@ const WinnerCard = ({ winner }) => {
        <Helmet>
         <title>LOREMIPSUM | WINNERS</title>
       </Helmet>
-   <div className="card w-full md:w-96 h-96 bg-pink-200 shadow-xl dark:bg-slate-700 dark:text-slate-100w">
+   <div data-aos="flip-left" className="card w-full md:w-80 lg:w-96 lg:h-96 bg-pink-200 shadow-xl dark:bg-slate-700 dark:text-slate-100w">
     
   <figure className="px-10 pt-10">
     <img src={img} alt="" className="rounded-full w-40 h-40" />

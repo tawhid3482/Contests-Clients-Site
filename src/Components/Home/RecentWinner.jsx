@@ -29,7 +29,7 @@ const RecentWinner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={slide1} className="h-56" alt="" />
+          <img src={slide1} className="  md:h-44 lg:h-56" alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide2} alt="" />

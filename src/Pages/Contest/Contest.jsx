@@ -5,7 +5,7 @@ const Contest = () => {
   const [contests] = UseCard();
   console.log(contests);
 
-  return <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+  return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
         contests?.map((contest)=><AllContest key={contest._id} contest={contest}></AllContest>)
     }

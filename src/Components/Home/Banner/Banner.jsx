@@ -5,7 +5,7 @@ const Banner = () => {
   const [item,setcontests]=useState()
 
 useEffect(()=>{
-   fetch('http://localhost:5000/contests')
+   fetch('https://assingment-12-server-bay.vercel.app/contests')
       .then((res) => res.json())
       .then((data) => setcontests(data));
 },[])

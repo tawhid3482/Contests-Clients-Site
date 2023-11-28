@@ -8,7 +8,7 @@ const AllContest = ({ contest }) => {
       <Helmet>
         <title>LOREMIPSUM | ALL CONTESTS</title>
       </Helmet>
-        <div className="card w-96 bg-base-100 h-96 shadow-xl dark:bg-slate-500 dark:text-slate-100">
+        <div data-aos="flip-right"  className="card w-full md:w-80 lg:w-96 bg-base-100 h-96 shadow-xl dark:bg-slate-500 dark:text-slate-100">
           <figure className="px-10 pt-10">
             <img src={img} alt="Shoes" className="rounded-xl h-60" />
           </figure>

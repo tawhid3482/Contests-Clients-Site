@@ -7,8 +7,8 @@ import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [resUser] = UseRegister();
-
   const [isAdmin] = UseAdmin()
+
   return (
     <div className=" md:flex  md:justify-between dark:bg-slate-700 dark:text-slate-100">
        <Helmet>
@@ -18,8 +18,8 @@ const Dashboard = () => {
         <Outlet></Outlet>
       </div>
 
-      <div className="w-full md:w-64 md:min-h-screen bg-pink-500 dark:bg-slate-700 dark:text-slate-100">
-        <ul className="menu p-4">
+      <div className=" w-full md:w-64 md:min-h-screen bg-pink-500 dark:bg-slate-700 dark:text-slate-100">
+        <ul className="menu p-4 md:fixed md:z-20">
           {isAdmin ? (
             <>
               <li className="text-white">

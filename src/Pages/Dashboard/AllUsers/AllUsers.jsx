@@ -4,6 +4,7 @@ import { FaTrash, FaUsers } from "react-icons/fa";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import DashboardSectionTitle from "../DashboardSectionTiltle/DashboardSectionTitle";
 
 const AllUsers = () => {
   const axiosSecure = UseAxiosSecure();
@@ -51,6 +52,7 @@ const AllUsers = () => {
        <Helmet>
         <title>LOREMIPSUM | ALL USERS</title>
       </Helmet>
+      <DashboardSectionTitle title={'All Users'}></DashboardSectionTitle>
       <div className=" m-3 ">
         <h2 className="text-3xl font-semibold">Total Users: {users?.length}</h2>
       </div>

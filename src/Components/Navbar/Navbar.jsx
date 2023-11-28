@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { BsSun } from "react-icons/bs";
 import { GiNightSleep } from "react-icons/gi";
 import UseAuth from "../../Hooks/UseAuth";
-import logo from "../../assets/logo/bird-colorful-logo-gradient-vector_343694-1365.avif";
+import logo from "../../assets/logo/logo.png";
 import { FcRegisteredTrademark } from "react-icons/fc";
 import UseRegister from "../../Hooks/UseRegister";
 import UseAdmin from "../../Hooks/UseAdmin";

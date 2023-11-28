@@ -52,17 +52,17 @@ const AdminHome = () => {
           title={"All Information"}
         ></DashboardSectionTitle>
       </div>
-      <div className=" flex justify-between mt-10">
-        <div className=" flex gap-10 bg-pink-400 text-white p-3 rounded-xl">
-          <div className="">
-            <FaMoneyCheckAlt className="text-6xl "></FaMoneyCheckAlt>
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10 ">
+        <div className=" flex gap-8 md:gap-5 lg:gap-10 bg-pink-400 text-white p-3 rounded-xl">
+          <div className=" ">
+            <FaMoneyCheckAlt className="text-7xl "></FaMoneyCheckAlt>
           </div>
           <div className="">
-            <p className="text-5xl font-bold">${status?.revenue}</p>
+            <p className="text-4xl font-bold">${status?.revenue}</p>
             <p className="text-2xl font-bold"> Revenue</p>
           </div>
         </div>
-        <div className=" flex gap-10 bg-purple-500 text-white p-3 rounded-xl">
+        <div className=" flex gap-8 md:gap-5 lg:gap-10 bg-purple-500 text-white p-3 rounded-xl">
           <div className="">
             <FaUsers className="text-6xl "></FaUsers>
           </div>
@@ -71,7 +71,7 @@ const AdminHome = () => {
             <p className="text-2xl font-bold">Users</p>
           </div>
         </div>
-        <div className=" flex gap-10 bg-yellow-300 text-white p-3 rounded-xl">
+        <div className=" flex gap-8 md:gap-5 lg:gap-10 bg-yellow-300 text-white p-3 rounded-xl">
           <div className="">
             <FaElementor className="text-6xl "></FaElementor>
           </div>
@@ -80,7 +80,7 @@ const AdminHome = () => {
             <p className="text-2xl font-bold">Contests</p>
           </div>
         </div>
-        <div className=" flex gap-10 bg-blue-400 text-white p-3 rounded-xl">
+        <div className=" flex gap-8 md:gap-5 lg:gap-3 bg-blue-400 text-white p-3 rounded-xl">
           <div className="">
             <FaBusAlt className="text-6xl "></FaBusAlt>
           </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsTwitter, BsYoutube } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
-import logo from '.././assets/logo/bird-colorful-logo-gradient-vector_343694-1365.avif'
+import logo from '.././assets/logo/logo.png'
 
 const Footer = () => {
   return (

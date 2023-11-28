@@ -24,6 +24,7 @@ import AdminHome from "../Pages/Dashboard/DashboardSectionTiltle/AdminHome/Admin
 import UserHome from "../Pages/Dashboard/DashboardSectionTiltle/UserHome/UserHome";
 import AddWinner from "../Pages/Dashboard/AddWinner/AddWinner";
 import UserWinner from "../Pages/Dashboard/UserWinner/UserWinner";
+import UpdateProfile from "../Pages/Dashboard/UpdateProfile/UpdateProfile";
 
 const Routes = createBrowserRouter([
     {
@@ -50,12 +51,12 @@ const Routes = createBrowserRouter([
             {
                 path:'contestDetails/:_id',
                 element:<PrivateRoute><ContestDetails></ContestDetails></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/contests')
+                loader:()=>fetch('https://assingment-12-server-bay.vercel.app/contests')
             },
             {
                 path:"registration/:_id",
                 element:<Registration></Registration>,
-                loader:()=>fetch('http://localhost:5000/contests')
+                loader:()=>fetch('https://assingment-12-server-bay.vercel.app/contests')
             },
             {
                 path:'winner',
@@ -80,7 +81,7 @@ const Routes = createBrowserRouter([
         },
         {
             path:'mycontests',
-            element:<MyContest></MyContest>
+            element:<PrivateRoute><MyContest></MyContest></PrivateRoute>
         },
         {
             path:'payment',
@@ -88,7 +89,7 @@ const Routes = createBrowserRouter([
         },
         {
             path:'paymentHistory',
-            element:<PaymentHistory></PaymentHistory>
+            element:<PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
         },
         {
             path:'home',
@@ -97,6 +98,10 @@ const Routes = createBrowserRouter([
         {
             path:'Mewinner',
             element:<UserWinner></UserWinner>
+        },
+        {
+            path:'updateProfile',
+            element:<UpdateProfile></UpdateProfile>
         },
         // admin routes
         {
@@ -114,7 +119,7 @@ const Routes = createBrowserRouter([
         {
             path:'updateContest/:id',
             element:<AdminRoute><UpdateContest></UpdateContest></AdminRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/contests/${params.id}`)
+            loader:({params})=>fetch(`https://assingment-12-server-bay.vercel.app/contests/${params.id}`)
         },
         {
             path:'adminhome',
