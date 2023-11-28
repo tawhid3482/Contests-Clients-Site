@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
 import WinnerCard from "./WinnerCard";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 const Winner = () => {
-  const [winners, setWinners] = useState();
+  const axiosSecure =UseAxiosSecure()
 
-  useEffect(() => {
-    fetch("winner.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setWinners(data);
-      });
-  }, []);
-
+  const { data: winners = [] } = useQuery({
+      queryKey: ["winners"],
+      queryFn: async () => {
+        const res = await axiosSecure.get("/winners"
+        );
+        return res.data;
+      },
+    });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5 ">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5  ">
       {winners?.map((winner) => (
         <WinnerCard key={winner._id} winner={winner}></WinnerCard>
       ))}

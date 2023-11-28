@@ -16,7 +16,7 @@ import SectionTitle from "../../Shared/SectionTitle";
 // import required modules
 const RecentWinner = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 dark:bg-slate-700 dark:text-slate-100">
         <SectionTitle title={'Our Winners'}> </SectionTitle>
       <Swiper
         slidesPerView={4}

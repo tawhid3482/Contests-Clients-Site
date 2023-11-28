@@ -35,7 +35,10 @@ const Login = () => {
       console.log(user);
       toast.success('Your are login successfully')
       navigate(from, { replace: true });
-    });
+    })
+    .catch(() =>{
+      toast.error('Something wrong please try again')
+    })
   };
 
   const handleValided = (e) => {

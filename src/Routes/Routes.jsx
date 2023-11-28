@@ -13,8 +13,17 @@ import Registration from "../Pages/Register/Registration";
 import Dashboard from "../Components/MainlayOut/Dashboard";
 import ResContest from "../Pages/Dashboard/ResContest/ResContest";
 import MyContest from "../Pages/Dashboard/MyContest";
-import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddContest from "../Pages/Dashboard/AddContests/AddContest";
+import AdminRoute from "./AdminRoute";
+import ManageContest from "../Pages/Dashboard/DashboardSectionTiltle/ManageContest/ManageContest";
+import UpdateContest from "../Pages/Dashboard/DashboardSectionTiltle/UpdateContest/UpdateContest";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/DashboardSectionTiltle/PaymentHistory/PaymentHistory";
+import AdminHome from "../Pages/Dashboard/DashboardSectionTiltle/AdminHome/AdminHome";
+import UserHome from "../Pages/Dashboard/DashboardSectionTiltle/UserHome/UserHome";
+import AddWinner from "../Pages/Dashboard/AddWinner/AddWinner";
+import UserWinner from "../Pages/Dashboard/UserWinner/UserWinner";
 
 const Routes = createBrowserRouter([
     {
@@ -74,14 +83,49 @@ const Routes = createBrowserRouter([
             element:<MyContest></MyContest>
         },
         {
-            path:'myprofile',
-            element:<MyProfile></MyProfile>
+            path:'payment',
+            element:<Payment></Payment>
+        },
+        {
+            path:'paymentHistory',
+            element:<PaymentHistory></PaymentHistory>
+        },
+        {
+            path:'home',
+            element:<UserHome></UserHome>
+        },
+        {
+            path:'Mewinner',
+            element:<UserWinner></UserWinner>
         },
         // admin routes
         {
             path:'users',
-            element:<AllUsers></AllUsers>
-        }
+            element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },
+        {
+            path:'Addcontests',
+            element:<AdminRoute><AddContest></AddContest></AdminRoute>
+        },
+        {
+            path:'manage',
+            element:<AdminRoute><ManageContest></ManageContest></AdminRoute>
+        },
+        {
+            path:'updateContest/:id',
+            element:<AdminRoute><UpdateContest></UpdateContest></AdminRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/contests/${params.id}`)
+        },
+        {
+            path:'adminhome',
+            element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+
+        },
+        {
+            path:'winner',
+            element:<AdminRoute><AddWinner></AddWinner></AdminRoute>
+        },
+
        ]
     }
 ])

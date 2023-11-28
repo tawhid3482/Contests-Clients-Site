@@ -11,7 +11,6 @@ const ContestDetailsShow = ({ contestDetail }) => {
     contestDescription,
     contestPrize,
     deadline,
-    email,
   } = contestDetail || {};
 
   return (
@@ -36,10 +35,9 @@ const ContestDetailsShow = ({ contestDetail }) => {
           </p>
 
           <p className="text-2xl font-semibold text-pink-400 ">
-            {contestPrize}
+            Prize: {contestPrize}
           </p>
-          <p className="text-2xl"> {contestDescription}</p>
-          <p className="text-2xl">Add by: {email}</p>
+          <p className="text-xl"> {contestDescription}</p>
           <p className="text-2xl"> last date: {deadline}</p>
           <div className="card-actions justify-end">
             <Link to={`/registration/${_id}`}>

@@ -19,7 +19,7 @@ const ContestDetails = () => {
   return (
     <div>
       <Helmet>
-        <title>LOREMIPSUM | Contests Details</title>
+        <title>LOREMIPSUM | CONTESTS DETAILS</title>
       </Helmet>
       <div className="">
         {contestDetail ? (

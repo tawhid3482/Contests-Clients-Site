@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import UseCard from "../../Hooks/UseCard";
 import Team from "../../Pages/Team/Team";
 import Banner from "./Banner/Banner";
@@ -9,7 +10,10 @@ const Home = () => {
   // console.log(contests)
 
     return (
-        <div>
+        <div className="dark:bg-slate-700 dark:text-slate-100">
+           <Helmet>
+        <title>LOREMIPSUM | HOME</title>
+      </Helmet>
           <Banner contests={contests} ></Banner>
           <ContestCard></ContestCard>
           <RecentWinner></RecentWinner>

@@ -1,21 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
-import { FaTrash, FaUsers } from "react-icons/fa";
-import toast from "react-hot-toast";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import UseCard from "../../../../Hooks/UseCard";
+import DashboardSectionTitle from "../DashboardSectionTitle";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const AllUsers = () => {
+const ManageContest = () => {
+  const [contests, refetch] = UseCard();
   const axiosSecure = UseAxiosSecure();
-  const { refetch, data: users = [] } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/users"
-      );
-      return res.data;
-    },
-  });
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -27,7 +21,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/users/${id}`).then((res) => {
+        axiosSecure.delete(`/contests/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             toast.success("contest deleted successfully");
             refetch();
@@ -37,70 +31,59 @@ const AllUsers = () => {
     });
   };
 
-  const handleMakeAdmin = (user) => {
-    axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
-      if (res.data.modifiedCount > 0) {
-        refetch();
-        toast.success(`${user.name} is admin now`);
-      }
-    });
-  };
-
   return (
     <div>
        <Helmet>
-        <title>LOREMIPSUM | ALL USERS</title>
+        <title>LOREMIPSUM | MANAGE</title>
       </Helmet>
+      <DashboardSectionTitle title={"Manage-Contests"}></DashboardSectionTitle>
       <div className=" m-3 ">
-        <h2 className="text-3xl font-semibold">Total Users: {users?.length}</h2>
+        <h2 className="text-3xl font-semibold">
+          Total Contests: {contests?.length}
+        </h2>
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
-          <thead className="text-lg  bg-pink-400  text-white">
+          <thead className="text-lg bg-pink-400 text-white">
             <tr>
               <th>#</th>
               <th>Image</th>
               <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
+              <th>Fee</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
-            {users?.map((user, index) => (
-              <tr key={user._id}>
+            {contests?.map((item, index) => (
+              <tr key={item._id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={user.photo}
+                          src={item.img}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
                     </div>
                   </div>
                 </td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>{item.name}</td>
+                <td>$ {item.fee}</td>
                 <td>
-                  {user.role === "admin" ? (
-                    "Admin"
-                  ) : (
-                    <button
-                      onClick={() => handleMakeAdmin(user)}
-                      className="btn "
-                    >
-                      <FaUsers className="text-xl text-pink-500"></FaUsers>
+                  <Link to={`/dashboard/updateContest/${item._id}`}>
+                    <button className="btn ">
+                      <FaEdit className="text-xl text-pink-500"></FaEdit>
                     </button>
-                  )}
+                  </Link>
                 </td>
                 <th>
                   <button
                     onClick={() => {
-                      handleDelete(user._id);
+                      handleDelete(item._id);
                     }}
                     className="btn"
                   >
@@ -116,4 +99,4 @@ const AllUsers = () => {
   );
 };
 
-export default AllUsers;
+export default ManageContest;

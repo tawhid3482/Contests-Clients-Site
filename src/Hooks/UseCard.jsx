@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import UseAxiosSecure from "./UseAxiosSecure";
 
 const UseCard = () => {
-    const [contests, setContests] = useState([]);
+const axiosSecure =UseAxiosSecure()
 
-    const [loading,setloading]=useState(true)
+    const { refetch, data: contests = [] } = useQuery({
+        queryKey: ["contests"],
+        queryFn: async () => {
+          const res = await axiosSecure.get("/contests"
+          );
+          return res.data;
+        },
+      });
 
-    useEffect(() => {
-        fetch('http://localhost:5000/contests')
-            .then(res => res.json())
-            .then(data =>{ setContests(data)
-            setloading(false)
-            })
-           
-    },[]);
-
-    return [contests,loading]
+    return [contests,refetch]
 };
 
 export default UseCard;

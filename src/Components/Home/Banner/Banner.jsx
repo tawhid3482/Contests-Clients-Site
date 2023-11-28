@@ -22,7 +22,7 @@ const [filterCards, setFilterCards] = useState(item);
   };
 
   return (
-    <div className="mt-0">
+    <div className="mt-0 dark:bg-slate-700 dark:text-slate-100">
       <div
         className="hero h-96 mt-16 md:mt-0"
         style={{

@@ -4,7 +4,7 @@ const ContestCard = ({ item, filterCards }) => {
   const limitContests = item?.slice(0,5)
   const limitContests2 = filterCards?.slice(0,5)
   return (
-    <div>
+    <div className="dark:bg-slate-700 dark:text-slate-100">
       <div className="my-10 ">
         <div className="flex flex-wrap justify-center  items-center md:grid gap-5 md:grid-cols-2 lg:grid-cols-3 w-full mx-auto">
           {limitContests2?.length > 0 ? (

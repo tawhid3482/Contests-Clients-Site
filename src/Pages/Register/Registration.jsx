@@ -17,7 +17,7 @@ const Registration = () => {
   return (
     <div>
       <Helmet>
-        <title>LOREMIPSUM | Registration</title>
+        <title>LOREMIPSUM | Registration </title>
       </Helmet>
       <div className="">
         

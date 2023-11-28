@@ -3,14 +3,15 @@ import UseRegister from "../../../Hooks/UseRegister";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const ResContest = () => {
-  const [resUser,refetch] = UseRegister();
+  const [resUser, refetch] = UseRegister();
   const totalPrice = resUser.reduce((total, item) => total + item.fee, 0);
-const axiosSecure= UseAxiosSecure()
+  const axiosSecure = UseAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
@@ -19,13 +20,12 @@ const axiosSecure= UseAxiosSecure()
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-       axiosSecure.delete(`/registers/${id}`)
-       .then(res =>{
-        if(res.data.deletedCount > 0){
-            toast.success('contest deleted successfully')
-            refetch()
-        }
-       })
+        axiosSecure.delete(`/registers/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            toast.success("contest deleted successfully");
+            refetch();
+          }
+        });
       }
     });
   };
@@ -41,7 +41,24 @@ const axiosSecure= UseAxiosSecure()
         </p>
         <div className="uppercase flex justify-center items-center gap-3">
           <p className="text-xl  lg:text-3xl font-semibold">Confirm:</p>
-          <button className="btn text-xl btn-secondary uppercase">Pay</button>
+          {resUser.length ? (
+            <Link to="/dashboard/payment">
+              <button
+                className="btn text-xl
+            btn-secondary uppercase"
+              >
+                Pay
+              </button>
+            </Link>
+          ) : (
+            <button
+            disabled
+              className="btn text-xl
+        btn-secondary uppercase"
+            >
+              Pay
+            </button>
+          )}
         </div>
       </div>
 

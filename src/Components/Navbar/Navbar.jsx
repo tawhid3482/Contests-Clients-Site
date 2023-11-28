@@ -8,9 +8,11 @@ import UseAuth from "../../Hooks/UseAuth";
 import logo from "../../assets/logo/bird-colorful-logo-gradient-vector_343694-1365.avif";
 import { FcRegisteredTrademark } from "react-icons/fc";
 import UseRegister from "../../Hooks/UseRegister";
+import UseAdmin from "../../Hooks/UseAdmin";
 
 const Navbar = () => {
   const { user, logOut } = UseAuth(null);
+  const [isAdmin] = UseAdmin();
   const [isMenuVisible, setMenuVisible] = useState(false);
   const [theme, setTheme] = useState(null);
   const [resUser] = UseRegister();
@@ -50,15 +52,18 @@ const Navbar = () => {
         </Link>
       </li>
 
-      <li className="ml-4">
-        <Link
-          to="/dashboard/resContests"
-          className="flex justify-center  hover:bg-white bg-purple-100"
-        >
-          <FcRegisteredTrademark className="text-xl " />
-          <div className="badge badge-secondary">+{resUser?.length}</div>
-        </Link>
-      </li>
+      {user && !isAdmin && (
+        <li className="ml-4">
+          <Link
+            to="/dashboard/resContests"
+            className="flex justify-center  hover:bg-white bg-purple-100"
+          >
+            <FcRegisteredTrademark className="text-xl " />
+            <div className="badge badge-secondary">+{resUser?.length}</div>
+          </Link>
+        </li>
+      )}
+      
       <li className="ml-4">
         <Link
           to="/winner"
@@ -96,16 +101,33 @@ const Navbar = () => {
                 </div>
               </label>
               <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ">
-                <li>
-                  <button className="btn btn-sm">{user.displayName}</button>
-                </li>
                 <li className="">
-                  <Link to={"/dashboard"} className="btn btn-sm">
-                    Dashboard
-                  </Link>
+                  <button className="btn btn-sm uppercase">
+                    {user.displayName}
+                  </button>
                 </li>
+
                 <li className="">
-                  <button onClick={logOut} className="btn btn-sm">
+                  {user && isAdmin && (
+                    <Link
+                      to={"/dashboard/adminHome"}
+                      className="btn btn-sm uppercase"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                  {user && !isAdmin && (
+                    <Link
+                      to={"/dashboard/home"}
+                      className="btn btn-sm uppercase"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                </li>
+
+                <li className="">
+                  <button onClick={logOut} className="btn btn-sm uppercase">
                     Logout
                   </button>
                 </li>

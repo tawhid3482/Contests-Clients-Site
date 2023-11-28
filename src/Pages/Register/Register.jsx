@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import UseRegister from "../../Hooks/UseRegister";
 import { useNavigate } from "react-router-dom";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 const imgae_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -15,6 +17,7 @@ const Register = ({ resContests }) => {
   const [,refetch]=UseRegister()
   const navigate = useNavigate()
   const axiosSecure = UseAxiosSecure()
+  const axiosPublic =UseAxiosPublic()
   console.log(resContests);
   const {
     _id,
@@ -34,18 +37,17 @@ const Register = ({ resContests }) => {
   const onSubmit = async (data) => {
     console.log(data);
     const imageFile = { image: data.image[0] };
-    const res = await axiosSecure.post(image_hosting_api, imageFile, {
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
       },
     });
 
-    console.log(res.data);
     if (res.data.success) {
       const resMember = {
         name: data.name,
         email: data.email,
-        fee: parseFloat(data.fee),
+        fee: data.fee,
         choose: data.choose,
         Name:data.Name,
         image: res.data.data.display_url,
@@ -57,8 +59,11 @@ const Register = ({ resContests }) => {
         contestPrize,
         deadline,
       };
+      const saikat = await axiosSecure.post('/resMembers',resMember)
+      if(saikat){
+        refetch()
+      }
       const menuRes = await axiosSecure.post("/registers", resMember);
-      console.log(menuRes.data);
       if (menuRes.data.insertedId) {
         toast.success("registration completed");
         refetch()
@@ -69,6 +74,9 @@ const Register = ({ resContests }) => {
 
   return (
     <div>
+       <Helmet>
+        <title>LOREMIPSUM | REGISTRATION</title>
+      </Helmet>
       <Container>
         <div className="">
           <form onSubmit={handleSubmit(onSubmit)}>
