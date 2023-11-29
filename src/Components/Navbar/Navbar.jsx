@@ -69,7 +69,7 @@ const Navbar = () => {
           to="/winner"
           className="flex justify-center  hover:bg-white bg-purple-100"
         >
-          Contest Winner
+          Best Creator 
         </Link>
       </li>
       <li className="ml-4">
@@ -81,7 +81,7 @@ const Navbar = () => {
         </Link>
       </li>
 
-      {/* Add more links as needed */}
+  
     </>
   );
 

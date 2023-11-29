@@ -14,7 +14,7 @@ const WinnerCard = ({ winner }) => {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title text-orange-400 text-3xl font-bold">{congratulation}</h2>
-    <p className="text-lg font-semibold">Winner Name: {name}</p>
+    <p className="text-lg font-semibold">Creator Name: {name}</p>
     <p className="text-lg font-semibold">Contest Name: {Name}</p>
     <p className="text-lg font-semibold">Winning Prize: {prize}</p>
     <p className="text-lg font-semibold">Last date to collect Prize: {deadline}</p>

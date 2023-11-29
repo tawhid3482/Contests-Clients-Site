@@ -27,7 +27,7 @@ const [filterCards, setFilterCards] = useState(item);
         className="hero h-96 mt-16 md:mt-0"
         style={{
           backgroundImage:
-            "url(https://www.shutterstock.com/image-vector/contest-card-bannerbeautiful-greeting-scratched-260nw-572632144.jpg)",
+            "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT46KpeN6hs-tWsh1xk-rMBgXEpm5ykjNFZ_nlwE1g4NHTyZCEZVHrBSKQR2_Ypzzbn5a8&usqp=CAU)",
         }}
       >
         <div className="hero-overlay bg-black opacity-40"></div>

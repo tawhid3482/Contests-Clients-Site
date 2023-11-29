@@ -59,10 +59,11 @@ const Register = ({ resContests }) => {
         contestPrize,
         deadline,
       };
-      const saikat = await axiosSecure.post('/resMembers',resMember)
-      if(saikat){
-        refetch()
-      }
+
+      const tawhid = await axiosSecure.post('/resMembers',resMember)
+      console.log(tawhid.data)
+    
+
       const menuRes = await axiosSecure.post("/registers", resMember);
       if (menuRes.data.insertedId) {
         toast.success("registration completed");
