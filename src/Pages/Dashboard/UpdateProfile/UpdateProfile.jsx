@@ -18,7 +18,7 @@ const UpdateProfile = () => {
         const user = Result
         console.log(user);
         toast.success("Your profile updated successfully");
-        navigate("/dashboard/home");
+        navigate("/");
       })
       .catch(() => {
         toast.error("Something wrong please try again");

@@ -15,7 +15,7 @@ const UserHome = () => {
 
       <div className=" mt-10 grid grid-cols-1 md:flex md:items-start  gap-3 md:gap-10 lg:gap-20">
         <div className="">
-          <img src={user.photoURL} className=" w-52 rounded-full" alt="" />
+          <img src={user.photoURL} className="w-52 rounded-full" alt="" />
         </div>
         <div className="">
           <h2 className="text-xl font-medium">

@@ -9,6 +9,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const AdminHome = () => {
   const { user } = UseAuth();
@@ -30,7 +31,7 @@ const AdminHome = () => {
       <DashboardSectionTitle title={"Admin Home"}></DashboardSectionTitle>
       <p className="text-3xl font-semibold my-2">Welcome {user.displayName}</p>
 
-      <div className="mt-10 flex  items-start gap-20">
+      <div className="mt-10 grid grid-cols-1 md:flex md:items-start  gap-3 md:gap-10 lg:gap-20">
         <div className="">
           <img src={user.photoURL} className="w-52 rounded-full" alt="" />
         </div>
@@ -45,6 +46,11 @@ const AdminHome = () => {
           <h2 className="text-xl font-medium mt-3">
             Email: <br /> <span className="text-pink-500">{user.email}</span>
           </h2>
+        </div>
+        <div className="">
+          <Link to='/dashboard/updateProfile'>
+            <button className="btn btn-secondary">Update</button>
+          </Link>
         </div>
       </div>
       <div className="mt-10">
