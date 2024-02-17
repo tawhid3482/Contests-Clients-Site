@@ -35,6 +35,7 @@ const Footer = () => {
           <Link className="link link-hover">Terms of use</Link>
           <Link className="link link-hover">Privacy policy</Link>
           <Link className="link link-hover">Cookie policy</Link>
+          <Link to='https://www.facebook.com/mdsaikatislam.islam.75' className="link link-hover">Developer Info</Link>
         </nav>
       </footer>
       <nav className="text-center mt-5">

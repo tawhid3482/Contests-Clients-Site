@@ -19,6 +19,7 @@ const CheckOutFrom = () => {
 
   const axiosSecure = UseAxiosSecure();
   const [resUser, refetch] = UseRegister();
+  console.log(resUser)
   const totalPrice = resUser?.reduce((total, item) => total + item.fee, 0);
 
   useEffect(() => {
@@ -77,7 +78,6 @@ const CheckOutFrom = () => {
         settransactionId(paymentIntent.id);
     
         // now save to the database
-
         const payment = {
           email: user.email,
           fee: totalPrice,
